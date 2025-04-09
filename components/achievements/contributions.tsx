@@ -50,12 +50,12 @@ export default function Contributions() {
     }, []);
 
     return (
-        <section className="section-padding bg-muted px-4">
+        <section className="section-padding bg-secondary/10 px-4">
             <div className="text-center mb-16">
                 <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
                     Major Projects
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold">Key Contributions</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">Key Contributions</h2>
                 <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
                     Significant initiatives and projects with lasting impact
                 </p>
@@ -68,13 +68,13 @@ export default function Contributions() {
                 {achievementsContent.contributions.map((contribution, index) => (
                     <Card
                         key={index}
-                        className="contribution-card opacity-0 transition-all duration-500 border-none shadow-lg hover:shadow-xl"
+                        className="contribution-card opacity-0 transition-all duration-500 border-border shadow-lg hover:shadow-xl bg-card/80 backdrop-blur-sm"
                     >
                         <CardHeader className="pb-2">
                             <div className="w-12 h-12 flex items-center justify-center rounded-md bg-primary/10 text-primary mb-4">
                                 {iconMap[index % iconMap.length]}
                             </div>
-                            <CardTitle>{contribution.title}</CardTitle>
+                            <CardTitle className="text-foreground">{contribution.title}</CardTitle>
                             <p className="text-sm text-primary">{contribution.year}</p>
                         </CardHeader>
                         <CardContent>

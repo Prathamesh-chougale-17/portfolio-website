@@ -48,7 +48,7 @@ export default function AwardsTimeline() {
                 <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
                     Recognition
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold">Awards & Honors</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">Awards & Honors</h2>
                 <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
                     Professional recognition received throughout my career
                 </p>
@@ -70,7 +70,7 @@ export default function AwardsTimeline() {
                         )}
                     >
                         {/* Timeline dot */}
-                        <div className="absolute left-12 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-background border-4 border-primary flex items-center justify-center">
+                        <div className="absolute left-12 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-background border-4 border-primary flex items-center justify-center z-10">
                             <Award className="w-5 h-5 text-primary" />
                         </div>
 
@@ -97,8 +97,8 @@ export default function AwardsTimeline() {
                                     : "md:pr-12 md:text-right"
                             )}
                         >
-                            <div className="bg-card shadow-sm p-6 rounded-lg border">
-                                <h3 className="text-xl font-semibold">{award.title}</h3>
+                            <div className="bg-card shadow-sm p-6 rounded-lg border border-border hover:shadow-md transition-shadow">
+                                <h3 className="text-xl font-semibold text-foreground">{award.title}</h3>
                                 <p className="text-primary text-sm mt-1">{award.organization}</p>
                                 <p className="mt-3 text-muted-foreground">{award.description}</p>
                             </div>

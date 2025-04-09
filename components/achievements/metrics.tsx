@@ -38,13 +38,13 @@ export default function Metrics() {
     }, []);
 
     return (
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-background">
             <div className="text-center mb-12">
-                <div className="inline-block px-4 py-1 bg-white/20  rounded-full text-sm font-medium mb-2">
+                <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
                     Impact
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold">Key Metrics</h2>
-                <p className="text-lg text-white/80 mt-4 max-w-2xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">Key Metrics</h2>
+                <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
                     Quantifiable results that demonstrate measurable impact
                 </p>
             </div>
@@ -56,16 +56,16 @@ export default function Metrics() {
                 {achievementsContent.metrics.map((item, index) => (
                     <div
                         key={index}
-                        className="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm hover:bg-white/15 transition-colors"
+                        className="bg-card/50 dark:bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm hover:bg-card/80 dark:hover:bg-white/15 transition-colors border border-border shadow-sm"
                     >
                         <div className="flex flex-col items-center justify-center h-full">
                             <div
-                                className="metric-value text-4xl md:text-5xl font-bold mb-3"
+                                className="metric-value text-4xl md:text-5xl font-bold mb-3 text-primary"
                                 data-value={item.metric}
                             >
                                 {item.metric}
                             </div>
-                            <p className="text-white/80">{item.description}</p>
+                            <p className="text-muted-foreground">{item.description}</p>
                         </div>
                     </div>
                 ))}
