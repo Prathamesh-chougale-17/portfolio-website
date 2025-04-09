@@ -1,0 +1,75 @@
+"use client";
+
+import React, { useEffect, useRef } from "react";
+import { achievementsContent } from "@/data/en";
+
+export default function Metrics() {
+    const metricsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const counters = metricsRef.current?.querySelectorAll(".metric-value");
+                        counters?.forEach((counter) => {
+                            counter.classList.add("counting");
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.25,
+            }
+        );
+
+        if (metricsRef.current) {
+            observer.observe(metricsRef.current);
+        }
+
+        return () => {
+            if (metricsRef.current) {
+                observer.unobserve(metricsRef.current);
+            }
+        };
+    }, []);
+
+    return (
+        <section className="py-16 px-4">
+            <div className="text-center mb-12">
+                <div className="inline-block px-4 py-1 bg-white/20  rounded-full text-sm font-medium mb-2">
+                    Impact
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold">Key Metrics</h2>
+                <p className="text-lg text-white/80 mt-4 max-w-2xl mx-auto">
+                    Quantifiable results that demonstrate measurable impact
+                </p>
+            </div>
+
+            <div
+                ref={metricsRef}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12"
+            >
+                {achievementsContent.metrics.map((item, index) => (
+                    <div
+                        key={index}
+                        className="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm hover:bg-white/15 transition-colors"
+                    >
+                        <div className="flex flex-col items-center justify-center h-full">
+                            <div
+                                className="metric-value text-4xl md:text-5xl font-bold mb-3"
+                                data-value={item.metric}
+                            >
+                                {item.metric}
+                            </div>
+                            <p className="text-white/80">{item.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+}
