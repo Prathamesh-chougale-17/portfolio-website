@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Hero from "@/components/home/hero";
 import Highlights from "@/components/home/highlights";
 import QuoteTicker from "@/components/home/quote-ticker";
-import { siteConfig } from "@/data/en";
+import { en, siteConfig } from "@/data/en";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} | ${siteConfig.title}`,
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      <Hero />
-      <Highlights />
-      <QuoteTicker />
+      <Hero {...en.home?.heroContent} />
+      <Highlights {...en.home?.highlightsContent} />
+      <QuoteTicker quoteContent={en.home?.quoteContent} />
     </div>
   );
 }

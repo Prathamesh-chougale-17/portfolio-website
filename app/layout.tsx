@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { en } from "@/data/en";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +38,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative flex min-h-screen flex-col mx-auto">
-            <Header />
+            {en.navigation && (
+              <Header name={en.siteConfig?.name} navigation={en.navigation} />
+            )}
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
