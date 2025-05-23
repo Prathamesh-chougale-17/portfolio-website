@@ -1,3 +1,35 @@
+/**
+ * English Language Content Configuration File
+ *
+ * This file contains all the text content for the website in English language.
+ *
+ * HOW TO USE:
+ * 1. Modify the values but keep the structure intact to ensure the website renders correctly.
+ * 2. All sections are organized by page (home, about, achievements, vision).
+ * 3. When updating, make sure to:
+ *    - Keep the JSON structure and property names unchanged
+ *    - Update only the string values and array contents
+ *    - Maintain proper nesting of objects
+ *    - Preserve the exported 'enType' typing for type safety
+ *
+ * For icons, use component names from the UI library, like:
+ * - BarChart, Globe, Lightbulb, Database, Shield, Scale, etc.
+ *
+ * IMAGES:
+ * Images are referenced from the public folder using a simple path starting with "/".
+ * For example:
+ * - "/placeholder.svg" refers to "public/placeholder.svg"
+ * - "/logo.png" would refer to "public/logo.png"
+ * - "/images/photo.jpg" would refer to "public/images/photo.jpg"
+ *
+ * To add new images:
+ * 1. Place your image files in the public folder or a subfolder
+ * 2. Reference them with a path starting with "/" followed by the file name or subfolder path
+ *
+ * NOTE: After making changes, save the file and the website will automatically
+ * update with your new content.
+ */
+
 import { enType } from "@/types";
 const en: enType = {
   siteConfig: {
@@ -7,7 +39,7 @@ const en: enType = {
     name: "Urvee Ranade",
     github: "https://github.com/urveeranade",
     linkedin: "https://www.linkedin.com/in/urveeranade/",
-    logo: "/placeholder.svg",
+    logo: "/placeholder.svg", // References public/placeholder.svg change to your image
   },
   navigation: [
     { name: "Home", href: "/" },
@@ -62,7 +94,7 @@ const en: enType = {
   aboutContent: {
     intro:
       "As a seasoned finance executive with a passion for strategic innovation, I've spent my career building financial frameworks that enable sustainable growth while navigating complex global challenges.",
-    photo: "/placeholder.svg",
+    photo: "/placeholder.svg", // References public/placeholder.svg change to your image
     expertiseSection: {
       header: "Expertise",
       title: "Areas of Expertise",
@@ -150,12 +182,13 @@ const en: enType = {
     profile: {
       intro:
         "I am a finance executive with over 20 years of experience in global finance, specializing in strategic leadership and sustainable investment.",
-      image: "/placeholder.svg",
+      image: "/placeholder.svg", // References public/placeholder.svg change to your image
       yearSince: 2003,
       para1:
         "With expertise spanning financial strategy, risk management, and digital transformation, I've guided organizations through periods of growth, market volatility, and technological disruption.",
       para2:
         "My approach combines data-driven insights with ethical considerations, ensuring that financial success supports broader purposes.",
+      // below is the list of highlights which highlight the words in para1 to primary color. If you wanted to add more highlights, you can add them here.
       highlights: [
         "financial strategy",
         "risk management",
@@ -275,7 +308,7 @@ const en: enType = {
   visionContent: {
     message: {
       title: "A Personal Note",
-      image: "/placeholder.svg",
+      image: "/placeholder.svg", // References public/placeholder.svg change to your image
       quote: "The future belongs to those who can see it coming.",
       heading: "Vision",
       content:
