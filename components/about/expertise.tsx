@@ -20,8 +20,14 @@ const iconMap = {
 };
 
 export default function Expertise({
+  header,
+  description,
+  title,
   expertise,
 }: {
+  header?: string;
+  description?: string;
+  title?: string;
   expertise?: ExpertiseItem[];
 }) {
   const [activeTab, setActiveTab] = useState(0);
@@ -30,14 +36,13 @@ export default function Expertise({
     <section className="section-padding bg-background dark:bg-gray-950 px-4">
       <div className="text-center mb-16">
         <div className="inline-block px-4 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary/90 rounded-full text-sm font-medium mb-2">
-          Expertise
+          {header}
         </div>
         <h2 className="text-3xl md:text-4xl font-bold dark:text-white">
-          Areas of Specialization
+          {title}
         </h2>
         <p className="text-lg text-muted-foreground dark:text-gray-300 mt-4 max-w-2xl mx-auto">
-          Core competencies and specialized skills developed throughout my
-          career
+          {description}
         </p>
       </div>
 

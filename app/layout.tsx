@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { en } from "@/data/en";
+import en from "@/data/en";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +39,7 @@ export default function RootLayout({
         >
           <div className="relative flex min-h-screen flex-col mx-auto">
             {en.navigation && (
-              <Header name={en.siteConfig?.name} navigation={en.navigation} />
+              <Header navigation={en.navigation} {...en.siteConfig} />
             )}
             <main className="flex-1">{children}</main>
             <Footer />

@@ -1,9 +1,12 @@
 // Site Configuration
 export interface SiteConfig {
   name?: string;
+  logo?: string;
   title?: string;
   description?: string;
   url?: string;
+  github?: string;
+  linkedin?: string;
 }
 
 // Navigation Item
@@ -50,17 +53,39 @@ export interface ExpertiseItem {
 
 // Philosophy Section
 export interface PhilosophySection {
+  header?: string;
   title?: string;
   quote?: string;
+  yearExperience?: string;
+  content?: string;
   principles?: string[];
 }
 
+// Expertise Section
+export interface ExpertiseSection {
+  title?: string;
+  header?: string;
+  description?: string;
+  expertise?: ExpertiseItem[];
+}
+
+// Profile Section
+export interface ProfileSection {
+  intro?: string;
+  image?: string;
+  yearSince?: number;
+  name?: string;
+  para1?: string;
+  para2?: string;
+  highlights?: string[];
+}
 // About Section
 export interface AboutSection {
   intro?: string;
   photo?: string;
-  expertise?: ExpertiseItem[];
+  expertiseSection?: ExpertiseSection;
   philosophy?: PhilosophySection;
+  profile?: ProfileSection;
   experience?: ExperienceSection;
 }
 
@@ -79,6 +104,8 @@ export interface MessageSection {
   description?: string;
   description2?: string;
   content?: string;
+  image?: string;
+  quote?: string;
 }
 
 // Outlook Item
@@ -146,12 +173,44 @@ export interface MediaMentionItem {
   quote?: string;
 }
 
+// Awards Section
+export interface AwardsSection {
+  title?: string;
+  header?: string;
+  description?: string;
+  awards?: AwardItem[];
+}
+
+// Metrics Section
+export interface MetricsSection {
+  title?: string;
+  header?: string;
+  description?: string;
+  metrics?: MetricItem[];
+}
+
+// contributions Section
+export interface ContributionsSection {
+  title?: string;
+  header?: string;
+  description?: string;
+  contributions?: ContributionItem[];
+}
+
+// Media Mentions Section
+export interface MediaMentionsSection {
+  title?: string;
+  header?: string;
+  description?: string;
+  mediaMentions?: MediaMentionItem[];
+}
+
 // Achievements Section
 export interface AchievementsSection {
-  awards?: AwardItem[];
-  metrics?: MetricItem[];
-  contributions?: ContributionItem[];
-  mediaMentions?: MediaMentionItem[];
+  awardSection?: AwardsSection;
+  metricSection?: MetricsSection;
+  contributionSection?: ContributionsSection;
+  mediaMentionSection?: MediaMentionsSection;
 }
 
 // Experience Section

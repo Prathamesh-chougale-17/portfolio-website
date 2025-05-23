@@ -56,7 +56,7 @@ export default function Timeline({
         </p>
       </div>
 
-      <div ref={timelineRef} className="max-w-6xl mx-auto">
+      <div ref={timelineRef} className="max-w-8xl mx-auto">
         {/* Timeline navigation dots */}
         <div className="hidden md:flex justify-between items-center mb-8 relative">
           <div className="absolute left-0 right-0 h-1 bg-border dark:bg-gray-700"></div>

@@ -5,7 +5,17 @@ import { Award } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AwardItem } from "@/types";
 
-export default function AwardsTimeline({ awards }: { awards?: AwardItem[] }) {
+export default function AwardsTimeline({
+  title,
+  header,
+  description,
+  awards,
+}: {
+  title?: string;
+  header?: string;
+  description?: string;
+  awards?: AwardItem[];
+}) {
   const timelineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,13 +56,13 @@ export default function AwardsTimeline({ awards }: { awards?: AwardItem[] }) {
     <section className="section-padding bg-background px-4">
       <div className="text-center mb-16">
         <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
-          Recognition
+          {header}
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-          Awards & Honors
+          {title}
         </h2>
         <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-          Professional recognition received throughout my career
+          {description}
         </p>
       </div>
 

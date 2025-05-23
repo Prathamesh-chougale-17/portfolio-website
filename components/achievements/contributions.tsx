@@ -13,8 +13,14 @@ const iconMap = [
 ];
 
 export default function Contributions({
+  header,
+  description,
+  title,
   contributions,
 }: {
+  header?: string;
+  description?: string;
+  title?: string;
   contributions?: ContributionItem[];
 }) {
   const contributionsRef = useRef<HTMLDivElement>(null);
@@ -57,13 +63,13 @@ export default function Contributions({
     <section className="section-padding bg-secondary/10 px-4">
       <div className="text-center mb-16">
         <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
-          Major Projects
+          {header}
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-          Key Contributions
+          {title}
         </h2>
         <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-          Significant initiatives and projects with lasting impact
+          {description}
         </p>
       </div>
 

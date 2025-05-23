@@ -8,13 +8,16 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 export default function Header({
   name,
   navigation,
+  logo,
 }: {
   name?: string;
   navigation: { name?: string; href?: string }[];
+  logo?: string;
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,7 +46,15 @@ export default function Header({
           href="/"
           className="text-2xl font-medium text-foreground flex items-center gap-2"
         >
-          <span className="inline-block w-8 h-8 rounded-full bg-primary"></span>
+          {logo && (
+            <Image
+              src={logo}
+              alt="Logo"
+              width={32}
+              height={32}
+              className="rounded-full"
+            />
+          )}
           <span
             className={cn(
               "transition-all duration-300",

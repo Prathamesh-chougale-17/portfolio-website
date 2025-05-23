@@ -8,6 +8,8 @@ export default function PersonalMessage({
   heading,
   description,
   description2,
+  image,
+  quote,
 }: MessageSection) {
   return (
     <section className="section-padding bg-background px-4 py-24">
@@ -30,18 +32,17 @@ export default function PersonalMessage({
           <div className="relative group max-w-md mx-auto lg:max-w-full">
             <div className="aspect-[16/9] rounded-2xl overflow-hidden relative shadow-xl transition-transform duration-300 hover:scale-[1.02] border border-border">
               <Image
-                src="/placeholder.svg"
+                src={image || "/placeholder.svg"}
                 alt="Vision representation"
                 width={600}
                 height={340}
                 className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
                 priority
               />
-
               {/* Overlay with gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent flex items-end p-8">
                 <p className="text-foreground text-xl font-medium drop-shadow-lg">
-                  &quot;The future belongs to those who can see it coming.&quot;
+                  <span>&quot;{quote}&quot;</span>
                 </p>
               </div>
             </div>

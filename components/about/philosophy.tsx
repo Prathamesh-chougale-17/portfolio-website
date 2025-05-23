@@ -3,36 +3,41 @@ import { Check } from "lucide-react";
 import { PhilosophySection } from "@/types";
 
 export default function Philosophy({
-  philosophy,
-}: {
-  philosophy?: PhilosophySection;
-}) {
+  header,
+  title,
+  quote,
+  yearExperience,
+  content,
+  principles,
+}: PhilosophySection) {
   return (
     <section className="section-padding dark:bg-gray-950 px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="space-y-6">
           <div className="inline-block px-4 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary/90 rounded-full text-sm font-medium mb-2">
-            My Approach
+            {header}
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold dark:text-white">
-            {philosophy?.title}
+            {title}
           </h2>
 
           <blockquote className="text-xl italic border-l-4 border-primary/30 dark:border-primary/40 pl-6 my-6 dark:text-gray-300">
-            &quot;{philosophy?.quote}&quot;
+            &quot;{quote}&quot;
           </blockquote>
 
-          <div className="space-y-4 mt-8">
-            {philosophy?.principles?.map((principle, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <div className="bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary/90 rounded-full p-1 mt-0.5">
-                  <Check className="w-4 h-4" />
+          {principles && (
+            <div className="space-y-4 mt-8">
+              {principles?.map((principle, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary/90 rounded-full p-1 mt-0.5">
+                    <Check className="w-4 h-4" />
+                  </div>
+                  <p className="dark:text-gray-300">{principle}</p>
                 </div>
-                <p className="dark:text-gray-300">{principle}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Visual element */}
@@ -54,10 +59,10 @@ export default function Philosophy({
           <div className="absolute inset-0 flex items-center justify-center p-12">
             <div className="text-center">
               <div className="text-5xl md:text-7xl font-bold mb-4 text-foreground dark:text-white">
-                20+
+                {yearExperience}
               </div>
               <p className="text-xl text-muted-foreground dark:text-gray-300">
-                Years of Financial Leadership
+                {content}
               </p>
             </div>
           </div>

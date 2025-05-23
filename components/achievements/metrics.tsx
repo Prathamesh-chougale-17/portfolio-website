@@ -3,7 +3,17 @@
 import { MetricItem } from "@/types";
 import React, { useEffect, useRef } from "react";
 
-export default function Metrics({ metrics }: { metrics?: MetricItem[] }) {
+export default function Metrics({
+  title,
+  header,
+  description,
+  metrics,
+}: {
+  title?: string;
+  header?: string;
+  description?: string;
+  metrics?: MetricItem[];
+}) {
   const metricsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -42,13 +52,13 @@ export default function Metrics({ metrics }: { metrics?: MetricItem[] }) {
     <section className="py-16 px-4 bg-background">
       <div className="text-center mb-12">
         <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
-          Impact
+          {header}
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-          Key Metrics
+          {title}
         </h2>
         <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-          Quantifiable results that demonstrate measurable impact
+          {description}
         </p>
       </div>
 
