@@ -35,9 +35,6 @@ export default function Profile({
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent opacity-60 dark:opacity-70"></div>
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900/90 to-transparent"></div>
               </div>
-              {/* Enhanced decorative elements */}
-              <div className="absolute -z-10 -bottom-8 -right-8 w-32 h-32 bg-primary/10 dark:bg-primary/20 rounded-3xl rotate-6 blur-sm"></div>
-              <div className="absolute -z-10 -top-8 -left-8 w-40 h-40 bg-primary/5 dark:bg-primary/10 rounded-3xl -rotate-6 blur-sm"></div>
               {/* Professional badge */}
               {yearSince && (
                 <div className="absolute bottom-6 right-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-primary dark:text-primary/90 px-4 py-2 rounded-full text-sm font-semibold shadow-lg transition-transform hover:scale-105">
